@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-export default function toDoForm({ dispatch }) {
+const ToDoForm = (props) => {
     const [newtoDoText, setNewtoDoText] = useState(" ");
 
     const handleChanges = (e) => {
@@ -11,10 +11,11 @@ export default function toDoForm({ dispatch }) {
     const addTodo = (e) => {
         e.preventDefault();
         setNewtoDoText(" ");
-        dispatch(
+        props.dispatch (
             {
                 type: "ADD_TODO",
-                payload: newtoDoText
+                payload: {item: newtoDoText, completed: false, id: Date.now()}
+
             }
         );
         setNewtoDoText(" ")
@@ -43,3 +44,5 @@ export default function toDoForm({ dispatch }) {
         </>
     )
 };
+
+export default ToDoForm;

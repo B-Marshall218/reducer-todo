@@ -9,10 +9,10 @@ export default function Todo({ todo, dispatch }) {
     }
 
     return (
-        <>
+        <div
             onClick={handleChanges}
-            className= {"todo toggled"}
+            className={"todo toggled"} >
             <p>{todo.item}</p>
-        </>
+        </div>
     );
 }

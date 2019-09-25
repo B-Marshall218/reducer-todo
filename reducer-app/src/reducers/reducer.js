@@ -5,19 +5,19 @@ export const initialState = {
         {
             item: 'Learn about reducers',
             completed: false,
-            id: ("")
+            id: ("1")
         },
 
         {
             item: "Mow Lawn",
             completed: false,
-            id: ("")
+            id: ("2")
         },
 
         {
             item: "Exercise",
             completed: false,
-            id: ("")
+            id: ("3")
         }
     ]
 };
@@ -28,7 +28,7 @@ export const toDoReducer = (state, action) => {
         case "ADD_TODO":
             return {
                 ...state,
-                item: action.payload,
+                items: [...state.items, action.payload],
                 completed: false,
                 id: Date.now()
             }
